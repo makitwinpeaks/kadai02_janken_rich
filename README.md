@@ -6,8 +6,7 @@
 今日のハーブティーおすすめアプリ
 
 ## ③DEMO
-
-デプロイしている場合はURLを記入（任意）
+https://makitwinpeaks.github.io/kadai02_janken_rich/janken_richver.html
 
 ## ④工夫した点・こだわった点
 
