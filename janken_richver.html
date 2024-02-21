@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/richver.css">
+    <title>Herb Tea Time</title>
+</head>
+
+<body>
+    <main>
+        <div class="title"><!-- ここからタイトルエリア -->
+       
+            <div class="title_sentence">
+
+                <img src="./img/herb03.png" alt="メイン画像">
+                <h1 class="title01">Herb Tea Time</h1>
+                <p class="title02">～今日のあなたにぴったりのハーブティーをおすすめ～</p>
+            </div> 
+        </div><!-- ここまでタイトルエリア -->
+    
+
+        <div class="feeling"><!--今の気分は？エリア -->
+            <h3>Q. 今の気分は？</h3>
+            <ul>
+                <li id="gu_btn">ぐったり</li>
+                <li id="flat_btn">フラット</li>
+                <li id="run_btn">るんるん</li>
+            </ul>
+        </div>
+        
+        <div class="hope"><!--どんな1日にしたい？エリア -->
+            <h3>Q. どんな1日にしたい？</h3>
+            <ul>
+                <li id="genki_btn">元気に動き回る！</li>
+                <li id="jyuden_btn">ゆったり充電</li>
+                <li id="syutyu_btn">とにかく集中！！</li>
+            </ul>
+        </div>
+    
+        <div class="result"><!--結果表示エリア -->
+            <h3>今日のあなたにぴったりなのは・・・</h3>
+       
+            <div class="news_btn"><!-- ここからボタン部分 -->
+                <!-- <a href="#" id="btn_01">結果を表示</a> -->
+                <button id="btn_01" type="button">結果を表示</button>
+            </div><!-- ここまでボタン部分 -->
+            
+            <div class="osusume"><!-- おすすめ表示部分 -->
+                <p>今日のおすすめは・・・ </p>
+                <img id="result_img">
+                <p id="result_herb"></p>
+        
+                
+            </div>
+            
+            <!-- <div id="judgement">勝負の結果は？</div> -->
+            
+            <div class="advice"><!-- アドバイス表示部分 -->
+                <p>ワンポイントアドバイスは・・・ </p>
+                <p id="result_unki"></p>
+            </div>
+            <div class="footer"></div>
+        </div>
+
+    </main>
+
+    <!-- <footer>
+    </footer> -->
+
+<script>
+    let view = ""; 
+    let gazou = "";
+    let hitokoto = "";
+
+
+
+//////////////////////////////////////////////////////////////////
+///////////////////これ以降どんな1日クリック時/////////////////////
+//////////////////////////////////////////////////////////////////
+
+//どんな１日：元気//
+
+ //1.乱数（1-3）
+ $("#genki_btn").on("click", function(){
+ const r =Math.ceil(Math.random()*3);
+ 
+ $("#genki_btn").css("background-color","#95a3ac"); 
+ $("#genki_btn").css("color","#fff"); 
+
+ //2.if分岐処理
+
+    if(r==1){//1はハイビスカス
+        view = 'ハイビスカス'; 
+        gazou = './img/hibiscus.jpg'
+    }
+    if(r==2){//2はスペアミント
+        view = 'スペアミント';
+        gazou = './img/spearmint.jpg'
+    }
+    if(r==3){//3はジンジャー
+        view = 'ジンジャー';
+        gazou = './img/ginger.jpg'
+    }
+    //3.表示処理
+    // $("#result_herb").html(view);
+
+})
+
+//どんな１日：ゆったり充電//
+
+ //1.乱数（1-3）
+ $("#jyuden_btn").on("click", function(){
+ const r =Math.ceil(Math.random()*3);
+ 
+ $("#jyuden_btn").css("background-color","#95a3ac"); 
+ $("#jyuden_btn").css("color","#fff"); 
+
+ //2.if分岐処理
+
+    if(r==1){//1はエルダーフラワー
+        // $("#result_herb").text("エルダーフラワー");
+        view = 'エルダーフラワー'; 
+        gazou = './img/elderflower.jpg'
+    }
+    if(r==2){//2はカモミール
+        // $("#result_herb").text("カモミール");
+        view = 'カモミール';
+        gazou = './img/camomile.jpg'
+    }
+    if(r==3){//3はローズヒップ
+        // $("#result_herb").text("ローズヒップ");
+        view = 'ローズヒップ';
+        gazou = './img/rosehip.jpg'
+
+
+    }
+
+    //3.表示処理
+    // $("#result_herb").html(view);
+
+})
+
+//どんな１日：集中//
+
+ //1.乱数（1-3）
+ $("#syutyu_btn").on("click", function(){
+ const r =Math.ceil(Math.random()*3);
+ 
+ $("#syutyu_btn").css("background-color","#95a3ac"); 
+ $("#syutyu_btn").css("color","#fff"); 
+
+ //2.if分岐処理
+
+    if(r==1){//1はマテ
+        // $("#result_herb").text("マテ");
+        view = 'マテ'; 
+        gazou = './img/mate.jpg'
+    }
+    if(r==2){//2はペパーミント
+        // $("#result_herb").text("ペパーミント");
+        view = 'ペパーミント';
+        gazou = './img/peppermint.jpg'
+    }
+    if(r==3){//3はローズマリー
+        // $("#result_herb").text("ローズマリー");
+        view = 'ローズマリー';
+        gazou = './img/rosemary.jpg'
+    }
+
+    //3.表示処理
+    // $("#result_herb").html(view);
+
+})
+
+//////////////////////////////////////////////////////////////////
+///////////////////これ以降今の気分クリック時//////////////////////
+//////////////////////////////////////////////////////////////////
+
+//今の気分：ぐったり//
+
+ //1.乱数（1-2）
+ $("#gu_btn").on("click", function(){
+ const s =Math.ceil(Math.random()*2);
+ 
+ 
+ $("#gu_btn").css("background-color","#95a3ac"); 
+ $("#gu_btn").css("color","#fff"); 
+
+
+ //2.if分岐処理
+
+    if(s==1){
+        hitokoto = 'ガラス製のマグで飲むと運気UP♪'; 
+    }
+    if(s==2){
+        hitokoto = 'はちみつを入れて飲むと運気UP♪';
+    }
+  
+    //3.表示処理
+    // $("#result_unki").html(hitokoto);
+
+
+})
+
+//今の気分：フラット//
+
+ //1.乱数（1-2）
+ $("#flat_btn").on("click", function(){
+ const s =Math.ceil(Math.random()*2);
+  
+ 
+ $("#flat_btn").css("background-color","#95a3ac"); 
+ $("#flat_btn").css("color","#fff"); 
+
+
+ //2.if分岐処理
+
+    if(s==1){
+        hitokoto = '全粒粉クッキーも添えると運気UP♪'; 
+    }
+    if(s==2){
+        hitokoto = 'ダークチョコも添えると運気UP♪';
+    }
+  
+    //3.表示処理
+    // $("#result_unki").html(hitokoto);
+
+})
+
+//今の気分：るんるん//
+
+ //1.乱数（1-2）
+ $("#run_btn").on("click", function(){
+ const s =Math.ceil(Math.random()*2);
+  
+ $("#run_btn").css("background-color","#95a3ac"); 
+ $("#run_btn").css("color","#fff"); 
+
+
+ //2.if分岐処理
+
+    if(s==1){
+        hitokoto = '赤いマグカップで飲むと運気UP♪'; 
+    }
+    if(s==2){
+        hitokoto = 'ピンクのカップで飲むと運気UP♪';
+    }
+  
+    //3.表示処理
+    //  $("#result_unki").html(hitokoto);
+
+})
+
+
+//////////////////////////////////////////////////////////////////
+/////////////////////結果の表示をクリック時////////////////////////
+//////////////////////////////////////////////////////////////////
+
+$("#btn_01").on("click", function(){
+
+//  $("#result_herb").html(view);
+//  $("#result_unki").html(hitokoto);
+
+ $("#result_herb").text(view);
+ $("#result_img").attr('src', gazou);
+ $("#result_unki").text(hitokoto);
+
+})
+
+</script>
+</body>
+</html>

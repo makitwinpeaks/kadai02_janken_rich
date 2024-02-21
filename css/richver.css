@@ -1,0 +1,158 @@
+
+html{
+    font-size:100%; /*ユーザー設定の文字サイズを正しく反映*/
+    width: 1200px;
+    color: #70a2ac;
+
+}
+/* *{
+
+    box-sizing:border-box;
+    align-items: center;
+    text-align: center;
+
+} */
+
+body{
+    /* text-align:picture-in-picture; */
+    font-size: 24px;
+    box-sizing:border-box;
+    align-items: center;
+    text-align: center;
+}
+
+
+img{
+    /* margin-top: 10px; */
+    max-width:100%; /*画像が親要素からはみ出すのを防ぐ*/
+    height: 100px;
+}
+
+
+.title{
+    width:100%;
+    background-color: #bfd3d6; 
+    align-items: center;
+    text-align: center;
+      
+}
+
+
+.title01{
+    margin-right:20px;
+}
+
+
+.title img {
+    margin:0 20px ;
+}
+
+main{
+
+    background-color: #efe2dd; 
+    margin-top: 0;
+    margin-bottom: 300px;
+    height: 1400px;
+}
+
+
+h3{
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 70px;
+}
+
+/* .title {
+    position: relative;
+
+  } */
+/* .title img{
+    width:100%;
+    height: 100%;
+  } */
+
+.title_sentence{
+    display: flex;
+    align-items: center;  
+} 
+
+
+
+p{
+    /* font-size:100%; */
+    text-align: center;
+    /* border-bottom:1px solid #fff; */
+    /* height: 50px; */
+    align-items: center; 
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #95a3ac;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+
+}
+li{
+    list-style-type:none;
+    border: 1px solid #95a3ac;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+    color: #95a3ac;
+}
+li:hover{
+    background: #95a3ac;
+    color:#fff;
+}
+
+#result_herb{
+    font-size: 40px;
+    color: #70a2ac;
+    font-weight: bold;
+}
+
+
+#result_img{
+    width: 200px;
+    height: 200px;
+    object-fit: none;
+    border-radius:50%;
+  }
+
+#result_unki {
+    text-decoration: underline; /* 下線 */
+    text-decoration-thickness: 0.5em; /* 線の太さ */
+    text-decoration-color: #bfd3d6; /* 線の色 */
+    text-underline-offset: -0.2em; /* 線の位置。テキストに重なるようにやや上部にする */
+    text-decoration-skip-ink: none; /* 下線と文字列が重なる部分でも下線が省略されない（線が途切れない） */
+  }
+
+
+
+#btn_01 {
+	display: block;
+	text-align: center;
+	/* vertical-align: middle; */
+	text-decoration: none;
+	width: 300px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+    font-size: 24px;
+	border: 2px solid #70a2ac;
+	background: #bfd3d6;
+	color: #70a2ac;
+	transition: 0.5s;
+}
+#btn_01:hover {
+	color: #70a2ac;
+	background: #fff;
+}
+
+.advice{
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+}
+
