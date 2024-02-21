@@ -1,0 +1,2 @@
+# kadai02_janken_rich
+kadai02_janken_rich提出用のリポジトリです
